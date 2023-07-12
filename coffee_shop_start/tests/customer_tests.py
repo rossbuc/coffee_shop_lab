@@ -6,7 +6,7 @@ class TestCustomer(unittest.TestCase):
 
     def setUp(self):
         self.customer = Customer("Buddy", 10, 15)
-        self.drink = Drink("espresso", 2)
+        self.drink = Drink("espresso", 2, 7)
 
     def test_customer_has_name(self):
         self.assertEqual("Buddy", self.customer.name)
@@ -25,3 +25,11 @@ class TestCustomer(unittest.TestCase):
     def test_customer_can_buy_drink(self):
         self.customer.buys_drink(self.drink)
         self.assertEqual(8, self.customer.wallet)
+
+    def test_customer_has_energy(self):
+        self.assertEqual(0, self.customer.energy)
+
+    @unittest.skip
+    def test_customer_energy_level(self):
+        self.customer.buys_drink(self.drink)
+        self.assertEqual(7, self.customer.energy)
