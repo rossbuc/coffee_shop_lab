@@ -1,3 +1,5 @@
+from src.drink import Drink
+
 class Customer:
 
     def __init__(self, name, wallet, age):
@@ -5,6 +7,7 @@ class Customer:
         self.wallet = wallet
         self.age = age
         self.energy = 0
+        self.drink = Drink("espresso", 2, 7)
 
     def change_wallet_amount(self, amount):
         self.wallet -= amount

@@ -42,4 +42,7 @@ class TestCoffeeShop(unittest.TestCase):
         result = self.coffee_shop.sell_drink(self.drink, self.customer)
         self.assertEqual("Sorry buddy, I can't serve you!", result)
 
+    def test_list_of_drink_names(self):
+        self.assertEqual(["espresso", "americano", "latte", "mocho", "cappuccino"], self.coffee_shop.drink_names())
+
     
