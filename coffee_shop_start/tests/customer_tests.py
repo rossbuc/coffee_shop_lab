@@ -29,7 +29,6 @@ class TestCustomer(unittest.TestCase):
     def test_customer_has_energy(self):
         self.assertEqual(0, self.customer.energy)
 
-    @unittest.skip
     def test_customer_energy_level(self):
         self.customer.buys_drink(self.drink)
         self.assertEqual(7, self.customer.energy)

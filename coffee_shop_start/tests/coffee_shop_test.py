@@ -32,10 +32,14 @@ class TestCoffeeShop(unittest.TestCase):
 
     def test_no_sale_under_16(self):
         result = self.coffee_shop.sell_drink(self.drink, self.customer)
-        self.assertEqual("Too young, Buddy!", result)
+        self.assertEqual("Sorry buddy, I can't serve you!", result)
 
     def test_sale_if_over_16(self):
         self.coffee_shop.sell_drink(self.drink, self.customer_2)
         self.assertEqual(102, self.coffee_shop.till)
+
+    def test_no_sale_high_energy(self):
+        result = self.coffee_shop.sell_drink(self.drink, self.customer)
+        self.assertEqual("Sorry buddy, I can't serve you!", result)
 
     
