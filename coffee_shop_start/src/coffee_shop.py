@@ -7,5 +7,8 @@ class CoffeeShop:
 	def change_till_by_amount(self, amount):
 		self.till += amount
 
-	def sell_drink(self, drink):
-		self.change_till_by_amount(drink.price)
+	def sell_drink(self, drink, customer):
+		if customer.age >= 16:
+			self.change_till_by_amount(drink.price)
+		else:
+			return "Too young, Buddy!"
