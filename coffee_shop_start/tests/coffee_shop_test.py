@@ -10,6 +10,7 @@ class TestCoffeeShop(unittest.TestCase):
         self.drink = Drink("espresso", 2, 7)
         self.customer = Customer("Buddy", 10, 15)
         self.customer_2 = Customer("Sweep", 50, 60)
+        self.customer_3 = Customer("Cheap", 2, 60)
     
     def test_coffee_shop_has_name(self):
         self.assertEqual("The Prancing Pony", self.coffee_shop.name)
@@ -44,5 +45,10 @@ class TestCoffeeShop(unittest.TestCase):
 
     def test_list_of_drink_names(self):
         self.assertEqual(["espresso", "americano", "latte", "mocho", "cappuccino"], self.coffee_shop.drink_names())
+
+    def test_list_of_drink_names_customer_can_afford(self):
+        self.assertEqual(["espresso", "americano"], self.coffee_shop.drinks_customer_can_afford(self.customer_3))
+
+    
 
     

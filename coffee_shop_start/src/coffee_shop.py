@@ -17,8 +17,10 @@ class CoffeeShop:
 			self.change_till_by_amount(drink.price)
 		else:
 			return "Sorry buddy, I can't serve you!"
+	
+	def drinks_customer_can_afford(self, customer):
+		return [drink.name for drink in self.drinks if customer.wallet >= drink.price]
 
 	def drink_names(self):
         	return [drink.name for drink in self.drinks]
-
-
+	
