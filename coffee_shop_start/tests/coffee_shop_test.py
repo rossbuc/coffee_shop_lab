@@ -51,8 +51,14 @@ class TestCoffeeShop(unittest.TestCase):
     def test_list_of_drink_names_customer_can_afford(self):
         self.assertEqual(["espresso", "americano"], self.coffee_shop.drinks_customer_can_afford(self.customer_3))
 
-    def can_sell_food(self):
+    def test_can_sell_food(self):
         self.coffee_shop.sell_food(self.food)
-        self.assertEqual(97, self.coffee_shop.till)
+        self.assertEqual(103, self.coffee_shop.till)
 
+    @unittest.skip
+    def test_drinks_have_quantity(self):
+        self.assertEqual(100, self.coffee_shop.stock[self.coffee_shop.drinks[1]])
+
+    def test_stock_value(self):
+        self.assertEqual(1250, self.coffee_shop.stock_value())
     
